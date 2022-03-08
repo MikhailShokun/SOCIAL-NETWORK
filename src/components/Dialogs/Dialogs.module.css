@@ -1,0 +1,83 @@
+.dialogs {
+}
+
+.dialogWrapper{
+    border: 1px solid #87acec;
+    border-radius: 5px;
+
+}
+
+.dialogsItems {
+
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
+.dialogItem {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.dialogItem img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.avaName{
+    display: flex;
+    flex-direction: column;
+}
+
+.activeLink {
+    color: gold;
+    text-decoration: none;
+}
+
+.dialogLink {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.messages {
+}
+
+.message {
+    background-color: #59c7c8;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.answer{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: flex-end;
+}
+
+.answer textarea {
+    min-width: 300px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.answerField {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.answerText {
+    margin: 3px;
+    padding: 5px;
+    background-color: #be7be5;
+    border-radius: 5px;
+    color: white;
+}
