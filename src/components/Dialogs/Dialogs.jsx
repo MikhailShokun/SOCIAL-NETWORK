@@ -7,7 +7,7 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().dialogPage;
+    let state = props.dialogPage;
 
 
     let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}/>);
@@ -16,11 +16,11 @@ const Dialogs = (props) => {
 
 
     let onSendMessageClick = () => {
-        props.store.dispatch(sendMessageCreator())
+        props.sendMessage();
     }
     let onNewMessageChange = (e) => {
         let body = e.target.value;
-        props.store.dispatch(updateNewMessageBodyCreator(body))
+        props.updateNewMessageBody(body);
     }
 
     return (
@@ -36,7 +36,7 @@ const Dialogs = (props) => {
                     <div>
                         <textarea value={newMessageBody}
                                    onChange={onNewMessageChange}
-                                   placeholder={'Enter your 1111message'}></textarea>
+                                   placeholder={'Enter your message'}></textarea>
                     </div>
                     <div>
                         <button onClick={onSendMessageClick}>Send</button>
