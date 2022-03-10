@@ -1,17 +1,16 @@
 .dialogs {
 }
 
-.dialogWrapper{
-    border: 1px solid #87acec;
-    border-radius: 5px;
+/*.dialogWrapper{*/
+/*    border: 1px solid #87acec;*/
+/*    border-radius: 5px;*/
 
-}
+/*}*/
 
 .dialogsItems {
-
-    display: grid;
-    gap: 10px;
-    padding: 10px;
+    /*display: grid;*/
+    /*gap: 10px;*/
+    /*padding: 10px;*/
 }
 .dialogItem {
     margin: 5px;
@@ -20,17 +19,15 @@
     justify-content: space-between;
 }
 
-
-.dialogItem img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 5px;
-}
-
 .avaName{
     display: flex;
     flex-direction: column;
+}
+
+.avaName img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
 }
 
 .activeLink {

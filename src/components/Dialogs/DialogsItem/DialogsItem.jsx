@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./../Dialogs.module.css";
 import {NavLink} from "react-router-dom";
-import avaDialog from '../../../assets/images/js.png';
+import avaDialog from '../../../assets/images/avaBoy1.png';
 
 const DialogItem = (props) => {
 
