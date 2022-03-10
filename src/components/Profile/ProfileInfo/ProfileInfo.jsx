@@ -1,13 +1,15 @@
 import React from 'react';
-import s from './ProfileInfo.module.css';
+import styles from './ProfileInfo.module.css';
+import cover from '../../../assets/images/space.png';
+
 
 const  ProfileInfo = () => {
     return (
       <div>
-        <div>
-          <img className={s.back} src="background.png" alt="background"/>
+        <div className={styles.back}>
+          <img src={cover} alt="background"/>
         </div>
-        <div className={s.descriptionBlock}>
+        <div className={styles.descriptionBlock}>
             ava + description
         </div>
       </div>

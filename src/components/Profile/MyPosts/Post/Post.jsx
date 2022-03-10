@@ -1,11 +1,12 @@
 import React from 'react';
 import s from './Post.module.css';
+import avaPost from '../../../../assets/images/git.png';
+
 
 const Post = (props) => {
     return (
         <div className={s.item}>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbNslP7-_P7jz5MrT5yhW14y_IzBDbZZT0ag&usqp=CAU"
-                alt="ava"></img>
+            <img src={avaPost} alt="ava"></img>
             {props.message}
             <div>
                 <span>likes:</span><span>{props.likesCount}</span>

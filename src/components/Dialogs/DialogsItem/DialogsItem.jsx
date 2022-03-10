@@ -1,6 +1,7 @@
 import React from "react";
-import s from "./../Dialogs.module.css";
+import styles from "./../Dialogs.module.css";
 import {NavLink} from "react-router-dom";
+import avaDialog from '../../../assets/images/js.png';
 
 const DialogItem = (props) => {
 
@@ -9,16 +10,16 @@ const DialogItem = (props) => {
 
 
     return (
-            <div className={s.dialogItem}>
-                <div>
-                    <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink>
-                </div>
-                {/*<div className={s.avaName}>*/}
-                {/*    <img src={props.ava} alt="ava"></img>*/}
-                {/*    <NavLink to={"/dialogs/" + props.id}*/}
-                {/*             className={dialogData => dialogData.isActive ? s.activeLink : s.dialogLink}>{props.name}</NavLink>*/}
+            <div className={styles.dialogItem}>
+                {/*<div>*/}
+                {/*    <NavLink to={"/dialogs/" + props.id}>{props.name}</NavLink>*/}
                 {/*</div>*/}
-                <div className={s.message}>{props.message}</div>
+                <div className={styles.avaName}>
+                    <img src={avaDialog} alt="ava"></img>
+                    <NavLink to={"/dialogs/" + props.id}
+                             className={dialogData => dialogData.isActive ? styles.activeLink : styles.dialogLink}>{props.name}</NavLink>
+                </div>
+                <div className={styles.message}>{props.message}</div>
             </div>
     )
 };
