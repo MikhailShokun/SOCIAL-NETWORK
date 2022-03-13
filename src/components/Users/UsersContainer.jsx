@@ -63,4 +63,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, mapDispatchToProps) (UsersContainer);
