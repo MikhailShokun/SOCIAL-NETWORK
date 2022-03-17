@@ -1,6 +1,8 @@
 .header {
   grid-area: h;
   background-color: green;
+  display: flex;
+  justify-content: space-between;
 }
 .logo {
   width: 50px;
@@ -11,4 +13,15 @@
   align-items: center;
   justify-content: center;
   margin-left: 20px;
+}
+
+.loginBlock {
+  margin-right: 30px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.loginBlock a{
+  color: white;
+  text-decoration: none;
 }
