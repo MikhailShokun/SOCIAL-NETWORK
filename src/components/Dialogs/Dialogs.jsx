@@ -1,9 +1,8 @@
 import React from "react";
 import s from "./Dialogs.module.css";
 import DialogItem from "./DialogsItem/DialogsItem";
-import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogsReducer";
 import Message from "./Message/Message";
-
+import {Navigate} from "react-router-dom";
 
 const Dialogs = (props) => {
 

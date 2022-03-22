@@ -2,11 +2,13 @@ import React from "react";
 import {sendMessageCreator, updateNewMessageBodyCreator} from "../../redux/dialogsReducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
+import {withAuthNavigate} from "../../hoc/withAuthNavigate";
+import {compose} from "redux";
 
 
 const mapStateToProps = (state) => {
     return {
-        dialogPage: state.dialogPage
+        dialogPage: state.dialogPage,
     }
 }
 
@@ -19,9 +21,9 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(updateNewMessageBodyCreator(body))
         }
     }
-
 }
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
-
-export default DialogsContainer;
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    withAuthNavigate
+)(Dialogs)

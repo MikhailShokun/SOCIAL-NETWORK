@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './ProfileInfo.module.css';
-import cover from '../../../assets/images/seaBackground.jpg';
 import Preloader from "../../common/Preloader/Preloader";
+import profilePhoto from "../../../assets/images/git.png";
+import ProfileStatus from "./ProfileStatus";
 
 
 const ProfileInfo = (props) => {
@@ -11,11 +12,13 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <div className={styles.back}>
-                <img src={cover} alt="background"/>
-            </div>
+            {/*<div className={styles.back}>*/}
+            {/*    <img src={cover} alt="background"/>*/}
+            {/*</div>*/}
             <div className={styles.descriptionBlock}>
-                <img src={props.profile.photos.large}/>
+                <img src={props.profile.photos.large !== null ? props.profile.photos.large : profilePhoto}
+                     className={styles.profilePhoto}/>
+                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
             </div>
             <div className={styles.aboutMe}>
                 {props.profile.aboutMe}

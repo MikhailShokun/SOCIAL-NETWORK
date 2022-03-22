@@ -1,35 +1,38 @@
 import React from 'react';
-import * as axios from 'axios';
-import { connect } from 'react-redux';
-import { useMatch } from 'react-router-dom';
-import { setUserProfile } from '../../redux/profileReducer';
+import {connect} from 'react-redux';
+import {getStatus, getUserProfile, updateStatus} from '../../redux/profileReducer';
 import Profile from './Profile';
+import {compose} from "redux";
+import {withRouter} from "../common/WithRouter/withRouter";
 
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
-        let userId = this.props.match ? this.props.match.params.userId : 2;
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`).then(({ data }) => {
-            this.props.setUserProfile(data);
-        });
+        let userId = this.props.match ? this.props.match.params.userId : 22877;
+        // this.props.getUserProfile(userId);
+
+        this.props.getUserProfile(userId);
+        this.props.getStatus(userId);
     }
 
+
     render() {
+
         return (
-            <div>
-                <Profile {...this.props} profile={this.props.profile} />
-            </div>
+            <Profile {...this.props} profile={this.props.profile} status={this.props.status}
+                     updateStatus={this.props.updateStatus}/>
         );
     }
 }
 
-const ProfileURLMatch = (props) => {
-    const match = useMatch('/profile/:userId/');
-    return <ProfileContainer {...props} match={match} />;
-}
 
-const mapStateToProps = (state) => ({
+let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
+    status: state.profilePage.status,
 });
 
-export default connect(mapStateToProps, { setUserProfile })(ProfileURLMatch);
+export default compose(
+    connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}),
+    withRouter,
+    // withAuthNavigate
+)(ProfileContainer)
