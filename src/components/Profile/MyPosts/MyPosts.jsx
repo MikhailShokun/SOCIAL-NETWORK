@@ -1,41 +1,57 @@
 import React from "react";
-import s from "./MyPosts.module.css";
+import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import {ErrorMessage, Field, Form, Formik} from "formik";
+import FormValidationSchema from "../../FormValidation/LoginFormSchema";
 
 
 const MyPosts = (props) => {
-
     let postsElements =
         props.posts.map(p => <Post message={p.post} key={p.id} likesCount={p.likesCount}/>);
 
-    let newPostElement = React.createRef();
-
-    let onAddPost = () => {
-        props.addPost();
-    }
-
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
-        props.updateNewPostText(text);
-    }
-
     return (
-        <div className={s.postsBlock}>
+        <div className={styles.postsBlock}>
             <h3>My posts</h3>
-            <div>
-                <div>
-                    <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
-                </div>
-                <div>
-                    <button onClick={onAddPost}>Add post</button>
-                </div>
-            </div>
+
+            <AddPostForm addPost={props.addPost}/>
+
             <div>New post</div>
-            <div className={s.posts}>
+            <div className={styles.posts}>
                 {postsElements}
             </div>
         </div>
     );
 };
+
+const AddPostForm = (props) => {
+
+    return (
+        <Formik initialValues={{newPostBody: ""}}
+                // validationSchema={FormValidationSchema}
+                onSubmit={(values) => {
+                    props.addPost(values.newPostBody)
+                }}>
+            {() => (
+                <Form>
+                    <div>
+                        <Field
+                            component={'textarea'}
+                            type={'textarea'}
+                            name={'newPostBody'}
+                            placeholder={'Enter your post'}
+                        />
+                        {/*<ErrorMessage className={styles.error} name="newPostBody" component="div"/>*/}
+
+
+                    </div>
+
+                    <div>
+                        <button type={'submit'}>Add post</button>
+                    </div>
+                </Form>
+            )}
+        </Formik>
+    )
+}
 
 export default MyPosts;

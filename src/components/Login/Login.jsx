@@ -1,49 +1,69 @@
 import React from "react";
 import {Formik, Form, Field, ErrorMessage} from "formik";
-import loginFormSchema from "../FormValidation/LoginFormSchema";
+import FormValidationSchema from "../FormValidation/LoginFormSchema";
+import {connect} from "react-redux";
+import {Navigate} from "react-router-dom";
+import {login} from "../../redux/authReducer";
+import styles from "./Login.module.css";
 
-const Login = () => (
-    <div>
+const Login = (props) => {
+    const onSubmit = (values, { setSubmitting, setStatus }) => {
+        props.login(values.email, values.password, values.rememberMe,setStatus);
+        setSubmitting(false);
+    };
+    if (props.isAuth) {
+        return <Navigate to={'/profile'}/>
+    }
+
+    return <div>
         <h1>Login</h1>
         <Formik
             initialValues={{email: "", password: "", rememberMe: false}}
-            validate={values => {
-                const errors = {};
-                if (!values.email) {
-                    errors.email = 'Required';
-                } else if (
-                    !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                ) {
-                    errors.email = 'Invalid email address';
-                }
-                return errors;
-            }}
-            onSubmit={(values) => {
-                console.log(values)
-            }}
-            validationSchema={loginFormSchema}>
-            {() => (
+            validationSchema={FormValidationSchema}
+            onSubmit={onSubmit}
+        >
+
+            {({
+                errors,
+                  touched,
+                  dirty,
+                  status,
+                  handleChange,
+                  handleBlur,
+                  values
+              }) => (
+
                 <Form>
+                    <div className={styles.warningAuth}>
+                        {status}
+                    </div>
                     <div>
-                        <Field type={'text'} name={'email'} placeholder={'e-mail'}/>
+                        <Field type={'text'} name={'email'} placeholder={'e-mail'} onChange={handleChange}
+                               onBlur={handleBlur} value={values.email}/>
                     </div>
                     <ErrorMessage name="email" component="div"/>
 
                     <div>
                         <Field type={'password'} name={'password'} placeholder={'password'}/>
+                        <ErrorMessage name="password" component="div"/>
                     </div>
-                    <ErrorMessage name="password" component="div"/>
 
                     <div>
                         <Field type={'checkbox'} name={'rememberMe'}/>
                         <label htmlFor={'rememberMe'}> remember me </label>
                     </div>
-
-                    <button type={'submit'}>Log in</button>
+                    <button type="submit"
+                            disabled={!dirty && !touched}
+                    >Login</button>
                 </Form>
             )}
         </Formik>
     </div>
-);
+};
 
-export default Login
+
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
+
+export default connect(mapStateToProps, {login})(Login);

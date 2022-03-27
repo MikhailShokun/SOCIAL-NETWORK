@@ -5,3 +5,12 @@
 .posts{
     margin-top: 10px;
 }
+
+.error {
+    color: #7e116e;
+}
+
+/*.formControl .error input,*/
+.areaError{
+    border: solid 2px red;
+}
