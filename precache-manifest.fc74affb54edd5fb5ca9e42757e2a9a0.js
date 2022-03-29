@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "89cc56e2f626908cab59",
+    "revision": "ebb68b64d6faff079c7a",
     "url": "/MikhailShokun/SOCIAL-NETWORK/static/css/main.37b7ddda.chunk.css"
   },
   {
-    "revision": "89cc56e2f626908cab59",
-    "url": "/MikhailShokun/SOCIAL-NETWORK/static/js/main.89cc56e2.chunk.js"
+    "revision": "ebb68b64d6faff079c7a",
+    "url": "/MikhailShokun/SOCIAL-NETWORK/static/js/main.ebb68b64.chunk.js"
   },
   {
     "revision": "eb6395e380c99a9296b1",
@@ -36,7 +36,7 @@ self.__precacheManifest = [
     "url": "/MikhailShokun/SOCIAL-NETWORK/static/media/preloader.164c431c.svg"
   },
   {
-    "revision": "9f7424ffdc58f6e163cd15390f16e73c",
+    "revision": "0168131fcd55e0d633e4dce522f1095b",
     "url": "/MikhailShokun/SOCIAL-NETWORK/index.html"
   }
 ];
