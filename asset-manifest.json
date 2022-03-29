@@ -1,7 +1,7 @@
 {
   "main.css": "/MikhailShokun/SOCIAL-NETWORK/static/css/main.37b7ddda.chunk.css",
-  "main.js": "/MikhailShokun/SOCIAL-NETWORK/static/js/main.ebb68b64.chunk.js",
-  "main.js.map": "/MikhailShokun/SOCIAL-NETWORK/static/js/main.ebb68b64.chunk.js.map",
+  "main.js": "/MikhailShokun/SOCIAL-NETWORK/static/js/main.0ec8a129.chunk.js",
+  "main.js.map": "/MikhailShokun/SOCIAL-NETWORK/static/js/main.0ec8a129.chunk.js.map",
   "static/css/1.c3439b17.chunk.css": "/MikhailShokun/SOCIAL-NETWORK/static/css/1.c3439b17.chunk.css",
   "static/js/1.eb6395e3.chunk.js": "/MikhailShokun/SOCIAL-NETWORK/static/js/1.eb6395e3.chunk.js",
   "static/js/1.eb6395e3.chunk.js.map": "/MikhailShokun/SOCIAL-NETWORK/static/js/1.eb6395e3.chunk.js.map",
@@ -13,10 +13,10 @@
   "runtime~main.js": "/MikhailShokun/SOCIAL-NETWORK/static/js/runtime~main.0a2a1c35.js",
   "runtime~main.js.map": "/MikhailShokun/SOCIAL-NETWORK/static/js/runtime~main.0a2a1c35.js.map",
   "static/media/preloader.svg": "/MikhailShokun/SOCIAL-NETWORK/static/media/preloader.164c431c.svg",
+  "static/css/main.37b7ddda.chunk.css.map": "/MikhailShokun/SOCIAL-NETWORK/static/css/main.37b7ddda.chunk.css.map",
   "static/css/1.c3439b17.chunk.css.map": "/MikhailShokun/SOCIAL-NETWORK/static/css/1.c3439b17.chunk.css.map",
   "static/css/2.fc7361f5.chunk.css.map": "/MikhailShokun/SOCIAL-NETWORK/static/css/2.fc7361f5.chunk.css.map",
-  "static/css/main.37b7ddda.chunk.css.map": "/MikhailShokun/SOCIAL-NETWORK/static/css/main.37b7ddda.chunk.css.map",
   "index.html": "/MikhailShokun/SOCIAL-NETWORK/index.html",
-  "precache-manifest.fc74affb54edd5fb5ca9e42757e2a9a0.js": "/MikhailShokun/SOCIAL-NETWORK/precache-manifest.fc74affb54edd5fb5ca9e42757e2a9a0.js",
+  "precache-manifest.dd28bf3d56e852a682d08306f785266c.js": "/MikhailShokun/SOCIAL-NETWORK/precache-manifest.dd28bf3d56e852a682d08306f785266c.js",
   "service-worker.js": "/MikhailShokun/SOCIAL-NETWORK/service-worker.js"
 }
