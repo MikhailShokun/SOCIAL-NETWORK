@@ -14,7 +14,7 @@ const ProfileInfo = ({profile,status,updateStatus}) => {
         <div>
             <div className={styles.descriptionBlock}>
                 <img src={profile.photos.large !== null ? profile.photos.large : profilePhoto}
-                     className={styles.profilePhoto}/>
+                     className={styles.profilePhoto} alt={'ava'}/>
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
             <div className={styles.aboutMe}>

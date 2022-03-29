@@ -10,6 +10,7 @@ let initialState = {
         {id: 1, post: 'Hi, how are you?', likesCount: 11},
         {id: 2, post: "It's my first post", likesCount: 20},
         {id: 3, post: "Who are you?", likesCount: 15},
+        {id: 4, post: "Where are you?", likesCount: 17},
     ],
     profile: null,
     status: "",
