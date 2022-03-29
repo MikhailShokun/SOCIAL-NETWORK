@@ -3,7 +3,7 @@ import styles from "./Dialogs.module.css";
 import DialogItem from "./DialogsItem/DialogsItem";
 import Message from "./Message/Message";
 import {Formik, Form, Field, ErrorMessage} from "formik";
-import FormValidationSchema from "../FormValidation/LoginFormSchema";
+import FormValidationSchema from "../../utils/validators/FormValidation/LoginFormSchema";
 
 
 const Dialogs = (props) => {

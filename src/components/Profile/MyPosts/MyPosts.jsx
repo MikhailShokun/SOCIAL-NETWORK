@@ -1,13 +1,15 @@
 import React from "react";
 import styles from "./MyPosts.module.css";
 import Post from "./Post/Post";
-import {ErrorMessage, Field, Form, Formik} from "formik";
-import FormValidationSchema from "../../FormValidation/LoginFormSchema";
+import {Field, Form, Formik} from "formik";
+// import FormValidationSchema from "../../../utils/validators/FormValidation/LoginFormSchema";
 
 
-const MyPosts = (props) => {
+ const MyPosts = React.memo(props => {
     let postsElements =
-        props.posts.map(p => <Post message={p.post} key={p.id} likesCount={p.likesCount}/>);
+        [...props.posts]
+            .reverse()
+            .map(p => <Post post={p.post} key={p.id} likesCount={p.likesCount}/>);
 
     return (
         <div className={styles.postsBlock}>
@@ -20,8 +22,8 @@ const MyPosts = (props) => {
                 {postsElements}
             </div>
         </div>
-    );
-};
+    )
+});
 
 const AddPostForm = (props) => {
 

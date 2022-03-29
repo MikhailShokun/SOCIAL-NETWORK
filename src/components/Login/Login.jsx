@@ -1,17 +1,17 @@
 import React from "react";
 import {Formik, Form, Field, ErrorMessage} from "formik";
-import FormValidationSchema from "../FormValidation/LoginFormSchema";
 import {connect} from "react-redux";
 import {Navigate} from "react-router-dom";
 import {login} from "../../redux/authReducer";
 import styles from "./Login.module.css";
+import FormValidationSchema from "../../utils/validators/FormValidation/LoginFormSchema";
 
-const Login = (props) => {
+const Login = ({login, isAuth}) => {
     const onSubmit = (values, { setSubmitting, setStatus }) => {
-        props.login(values.email, values.password, values.rememberMe,setStatus);
+        login(values.email, values.password, values.rememberMe,setStatus);
         setSubmitting(false);
     };
-    if (props.isAuth) {
+    if (isAuth) {
         return <Navigate to={'/profile'}/>
     }
 

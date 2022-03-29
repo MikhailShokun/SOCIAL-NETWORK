@@ -1,0 +1,19 @@
+.pagination{
+    margin: 10px;
+}
+
+.selectedPage {
+    font-weight: bold;
+    color: white;
+    padding: 2px 5px;
+    border: 1px solid white;
+    margin: 5px;
+
+}
+
+.allPages {
+    padding: 2px 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+    margin: 5px;
+}

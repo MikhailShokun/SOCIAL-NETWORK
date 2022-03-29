@@ -2,26 +2,23 @@ import React from 'react';
 import styles from './ProfileInfo.module.css';
 import Preloader from "../../common/Preloader/Preloader";
 import profilePhoto from "../../../assets/images/git.png";
-import ProfileStatus from "./ProfileStatus";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({profile,status,updateStatus}) => {
+    if (!profile) {
         return <Preloader/>
     }
 
     return (
         <div>
-            {/*<div className={styles.back}>*/}
-            {/*    <img src={cover} alt="background"/>*/}
-            {/*</div>*/}
             <div className={styles.descriptionBlock}>
-                <img src={props.profile.photos.large !== null ? props.profile.photos.large : profilePhoto}
+                <img src={profile.photos.large !== null ? profile.photos.large : profilePhoto}
                      className={styles.profilePhoto}/>
-                <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
             </div>
             <div className={styles.aboutMe}>
-                {props.profile.aboutMe}
+                {profile.aboutMe}
             </div>
         </div>
     );
