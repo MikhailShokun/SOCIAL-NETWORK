@@ -17,3 +17,12 @@
     border: 1px solid gray;
     margin: 5px;
 }
+
+.prevNextButtons {
+    color: #54114a;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+    background-color: #c8eca3;
+}
