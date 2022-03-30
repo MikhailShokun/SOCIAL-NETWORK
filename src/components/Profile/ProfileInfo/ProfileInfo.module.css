@@ -16,3 +16,11 @@
 .profilePhoto {
     width: 300px;
 }
+
+.contacts{
+    padding-left: 10px;
+}
+
+.error{
+    color: red;
+}

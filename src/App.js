@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
-import {Routes, Route, BrowserRouter} from "react-router-dom";
+import {Routes, Route, HashRouter} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -71,11 +71,12 @@ const AppContainer = compose(
 
 const SocialJsApp = (props) => {
     return (
-        <BrowserRouter>
+        // `/${process.env.PUBLIC_URL}`
+        <HashRouter>
             <Provider store={store}>
                 <AppContainer/>
             </Provider>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

@@ -14,5 +14,7 @@ const FormValidationSchema = Yup.object().shape({
         .max(5, "So long post!"),
     newMessageBody: Yup.string()
         .max(5, "So long message!"),
+    mainLink: Yup.string()
+        .max(5, "So long adress!"),
 });
 export default FormValidationSchema;

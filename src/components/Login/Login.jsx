@@ -4,11 +4,11 @@ import {connect} from "react-redux";
 import {Navigate} from "react-router-dom";
 import {login} from "../../redux/authReducer";
 import styles from "./Login.module.css";
-import FormValidationSchema from "../../utils/validators/FormValidation/LoginFormSchema";
+import FormValidationSchema from "../../utils/validators/FormValidation/FormSchema";
 
-const Login = ({login, isAuth}) => {
-    const onSubmit = (values, { setSubmitting, setStatus }) => {
-        login(values.email, values.password, values.rememberMe,setStatus);
+const Login = ({login, isAuth, captchaUrl}) => {
+    const onSubmit = (values, { setSubmitting, setStatus}) => {
+        login(values.email, values.password, values.rememberMe,setStatus, values.captcha);
         setSubmitting(false);
     };
     if (isAuth) {
@@ -18,7 +18,7 @@ const Login = ({login, isAuth}) => {
     return <div>
         <h1>Login</h1>
         <Formik
-            initialValues={{email: "", password: "", rememberMe: false}}
+            initialValues={{email: "", password: "", rememberMe: false, captcha: ''}}
             validationSchema={FormValidationSchema}
             onSubmit={onSubmit}
         >
@@ -52,6 +52,10 @@ const Login = ({login, isAuth}) => {
                         <Field type={'checkbox'} name={'rememberMe'}/>
                         <label htmlFor={'rememberMe'}> remember me </label>
                     </div>
+                    {/*captcha*/}
+                    {captchaUrl && <img src={captchaUrl} alt={'captcha'}/>}
+                    {captchaUrl && <Field name={'captcha'}/>}
+
                     <button type="submit"
                             disabled={!dirty && !touched}
                     >Login</button>
@@ -63,7 +67,8 @@ const Login = ({login, isAuth}) => {
 
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captchaUrl: state.auth.captchaUrl,
 })
 
 export default connect(mapStateToProps, {login})(Login);

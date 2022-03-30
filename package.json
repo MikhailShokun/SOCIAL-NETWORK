@@ -2,7 +2,7 @@
   "name": "react-social-network",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/MikhailShokun/SOCIAL-NETWORK",
+  "homepage": "https://mikhailshokun.github.io/SOCIAL-NETWORK",
   "dependencies": {
     "axios": "^0.26.1",
     "formik": "^2.2.9",
