@@ -1,4 +1,7 @@
-GitHub Pages: https://mikhailshokun.github.io/SOCIAL-NETWORK/
+GitHub Pages: 
+https://mikhailshokun.github.io/SOCIAL-NETWORK/
+
+In this social network I learned how to use React, Redux, hooks. Here you can log in, check captcha, change your profile information
 
 
 # Getting Started with Create React App
